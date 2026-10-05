@@ -37,6 +37,7 @@ class Game:
                     sys.exit()
             
             # Logika game
+            self.display_surface.fill('black')
             self.all_sprites.update(dt)
             self.all_sprites.draw(self.display_surface)
             
