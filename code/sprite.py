@@ -18,7 +18,7 @@ class BG(pygame.sprite.Sprite):
         self.pos = pygame.math.Vector2(self.rect.topleft)
         
     def update(self, dt):
-        self.pos.x -= 300 * dt
+        self.pos.x -= 250 * dt
         if self.rect.centerx <= 0:
             self.pos.x = 0
         self.rect.x = round(self.pos.x)
