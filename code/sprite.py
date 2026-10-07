@@ -52,4 +52,13 @@ class Plane(pygame.sprite.Sprite):
         self.image = self.frames[self.frame_index]
         
         # Rect
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect(midleft = (WINDOW_WIDTH / 20, WINDOW_HEIGHT / 2))
+    
+    def import_frames(self, scale_factor):
+        self.frames = []
+        for i in range(3):
+            surf = pygame.image.load(f'graphics/plane/red{i}.png').convert_alpha()
+            scaled_surface = pygame.transform.scale(surf, pygame.math.Vector2(surf.get_size()) * scale_factor)
+            self.frames.append(scaled_surface)
+            
+            
