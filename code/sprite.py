@@ -66,6 +66,10 @@ class Plane(pygame.sprite.Sprite):
         
         # Mask
         self.mask = pygame.mask.from_surface(self.image)
+        
+        # Suarane
+        self.jump_sound = pygame.mixer.Sound('sounds/jump.wav')
+        self.jump_sound.set_volume(0.2)
     
     def import_frames(self, scale_factor):
         self.frames = []
@@ -80,6 +84,7 @@ class Plane(pygame.sprite.Sprite):
         self.rect.y = round(self.pos.y)
         
     def jump(self):
+        self.jump_sound.play()
         self.direction = -400
         
     def animate(self,dt):
